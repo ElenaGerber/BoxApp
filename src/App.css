@@ -1,38 +1,127 @@
-.App {
-  text-align: center;
+/* Font */
+@font-face {
+  font-family: 'bebas';
+  src: url("./../public/fonts/bebas-neue-latin-400-normal.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Canvas */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Body */
+body {
+  margin: 0;
+  overflow: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* titles */
+h1 {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  font-family: 'bebas';
+  font-size: 64px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+h2 {
+  position: absolute;
+  top: 30px;
+  right: 100px;
+  font-family: 'bebas';
+  font-size: 32px;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Controls container */
+#controls {
+  position: absolute;
+  top: 150px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-family: 'bebas';
+  width: 300px;
+}
+
+.hidden-span {
+  visibility: hidden;
+  position: absolute;
+  left: -9999px; /* move off-screen */
+}
+
+#controls div{
+  margin-bottom: 24px;
+}
+
+/* Section titles */
+#controls h3 {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Labels */
+#controls label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Range inputs */
+#controls input[type="range"] {
+  flex: 1;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 16px;
+  border-radius: 5px;
+  background: #ddd;
+  outline: none;
+  transition: background 0.3s;
+}
+
+/* Number inputs */
+input[type="number"] {
+  width: 70px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+input[type="number"]:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Apply button */
+#apply {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+#apply:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+#apply:active {
+  background-color: #004080;
+  transform: translateY(0);
 }
